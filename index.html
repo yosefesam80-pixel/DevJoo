@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Joo | Software Engineer & Cybersecurity Specialist</title>
+    <title>Dev Joo Studio | Full-Stack Software Engineering & Security</title>
+    <meta name="description" content="أبني أنظمة رقمية سريعة، آمنة، وقابلة للتوسع. خدمات تطوير الويب المتقدم والأمن السيبراني والدعم التقني الشامل.">
+    
+    <!-- Open Graph / Meta -->
+    <meta property="og:title" content="Dev Joo Studio | Software Engineering & Cybersecurity">
+    <meta property="og:description" content="تحويل الأفكار إلى منتجات رقمية عالية الكفاءة وآمنة من البداية.">
+    <meta property="og:type" content="website">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons CDN -->
@@ -43,22 +50,21 @@
             overflow-x: hidden;
         }
         .bg-grid {
-            background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 0);
+            background-image: radial-gradient(rgba(59, 130, 246, 0.12) 1px, transparent 0);
             background-size: 32px 32px;
         }
         .glow-card {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(11, 15, 23, 0.85) 100%);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(11, 15, 23, 0.9) 100%);
             border: 1px solid rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(16px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glow-card:hover {
             border-color: rgba(59, 130, 246, 0.4);
-            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
-            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
         }
         .avatar-glow {
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.35);
         }
         .cyber-border {
             position: relative;
@@ -76,207 +82,664 @@
         .cyber-border:hover::before {
             opacity: 1;
         }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070a11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white bg-grid relative">
 
-    <!-- Ambient Background Lighting Effect -->
-    <div class="fixed top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse"></div>
-    <div class="fixed bottom-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse" style="animation-duration: 4s;"></div>
+    <!-- Ambient Lighting Effects -->
+    <div class="fixed top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse"></div>
+    <div class="fixed bottom-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse" style="animation-duration: 5s;"></div>
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 backdrop-blur-xl bg-brand-dark/70 border-b border-white/10">
-        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- COMMAND CENTER BAR -->
+    <div class="bg-slate-950/90 border-b border-white/5 py-1.5 px-4 font-mono text-[11px] text-slate-400 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5 text-emerald-400">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                    STATUS: AVAILABLE FOR PROJECTS
+                </span>
+                <span class="hidden md:inline text-slate-600">|</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-shield-halved text-blue-400"></i> SECURITY: ENABLED</span>
+            </div>
             <div class="flex items-center gap-3">
-                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 avatar-glow">
+                <span>DEV JOO COMMAND CENTER v2.5</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-brand-dark/80 border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="relative w-10 h-10 rounded-full p-[2px] bg-gradient-to-r from-blue-500 to-emerald-400 avatar-glow">
                     <img src="me.jpeg" onerror="this.src='https://placehold.co/150x150/131c2e/3b82f6?text=Dev+Joo'" alt="Dev Joo Profile" class="w-full h-full object-cover rounded-full">
                 </div>
                 <div>
-                    <h1 class="text-xl font-black tracking-wide text-white flex items-center gap-2">
+                    <h1 class="text-lg font-black tracking-wide text-white flex items-center gap-1.5 group-hover:text-blue-400 transition">
                         Dev Joo
-                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span class="text-xs font-mono text-emerald-400">.Studio</span>
                     </h1>
-                    <p class="text-xs text-brand-cyber flex items-center gap-1 font-semibold">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                        <span data-ar="متاح للمشاريع والأمن السيبراني" data-en="Available for Projects & Security">متاح للمشاريع والأمن السيبراني</span>
-                    </p>
                 </div>
-            </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-300">
+                <a href="#services" class="hover:text-blue-400 transition" data-ar="الخدمات" data-en="Services">الخدمات</a>
+                <a href="#mission" class="hover:text-blue-400 transition" data-ar="اختر هدفك" data-en="Choose Mission">اختر هدفك</a>
+                <a href="#solutions" class="hover:text-blue-400 transition" data-ar="حلول المشاكل" data-en="Solutions">حلول المشاكل</a>
+                <a href="#projects" class="hover:text-blue-400 transition" data-ar="المشاريع" data-en="Projects">المشاريع</a>
+                <a href="#process" class="hover:text-blue-400 transition" data-ar="خطوات العمل" data-en="Process">خطوات العمل</a>
+                <a href="#about" class="hover:text-blue-400 transition" data-ar="عن الـ Studio" data-en="About Studio">عن الـ Studio</a>
+                <a href="#faq" class="hover:text-blue-400 transition" data-ar="الأسئلة" data-en="FAQ">الأسئلة</a>
+            </nav>
 
             <div class="flex items-center gap-3">
-                <button id="langToggle" onclick="toggleLanguage()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-bold text-white transition flex items-center gap-2 border border-white/10 shadow-lg">
+                <button id="langToggle" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-bold text-white transition flex items-center gap-1.5 border border-white/10">
                     <i class="fa-solid fa-globe text-brand-500"></i>
                     <span id="langLabel">English</span>
                 </button>
+                <a href="#contact" class="hidden sm:inline-flex px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-xs font-bold text-white shadow-lg transition transform hover:scale-105" data-ar="🚀 ابدأ مشروعك" data-en="🚀 Start Project">
+                    🚀 ابدأ مشروعك
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Main Hero Section -->
-    <main class="max-w-6xl mx-auto px-4 py-8 md:py-12 space-y-10 flex-grow w-full">
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-20 flex-grow w-full">
         
-        <!-- Hero Card -->
-        <section class="glow-card rounded-3xl p-6 md:p-10 relative overflow-hidden border border-white/10">
-            <div class="grid md:grid-cols-3 gap-8 items-center">
-                <div class="md:col-span-2 space-y-5">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20 shadow-inner">
+        <!-- 1 — HERO SECTION -->
+        <section class="glow-card rounded-3xl p-6 md:p-12 relative overflow-hidden border border-white/10">
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-8 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">
                         <i class="fa-solid fa-shield-halved text-emerald-400"></i>
-                        <span data-ar="هندسة البرمجيات & الأمن السيبراني" data-en="Software Engineering & Cybersecurity">هندسة البرمجيات & الأمن السيبراني</span>
+                        <span data-ar="Software Engineering & Cybersecurity Studio" data-en="Software Engineering & Cybersecurity Studio">Software Engineering & Cybersecurity Studio</span>
                     </div>
 
-                    <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">
-                        <span data-ar="أهلاً بك، أنا " data-en="Welcome, I'm ">أهلاً بك، أنا </span>
-                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400">Dev Joo</span>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
+                        <span data-ar="أبني أنظمة رقمية سريعة، آمنة، وقابلة للتوسع." data-en="I build fast, secure, and scalable digital systems.">أبني أنظمة رقمية سريعة، آمنة، وقابلة للتوسع.</span>
                     </h2>
 
-                    <!-- Arabic Bio -->
-                    <div id="bio-ar" class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
-                        <p class="font-bold text-lg text-white">مهندس برمجيات × متخصص في الأمن السيبراني 🔐</p>
-                        <p class="text-slate-300">ببني برمجيات عالية الكفاءة، وبأمّن الأنظمة من الثغرات، وبحل التحديات التقنية المعقدة.</p>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm font-semibold pt-2">
-                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-laptop-code text-blue-400 text-base"></i> 💻 هندسة البرمجيات</div>
-                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-user-ninja text-emerald-400 text-base"></i> 🔐 الأمن السيبراني والاختبار الأخلاقي</div>
-                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-globe text-indigo-400 text-base"></i> 🌐 تطوير الويب المتقدم</div>
-                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-gears text-purple-400 text-base"></i> ⚙️ الأنظمة والتشغيل الآلي</div>
-                        </div>
-                    </div>
+                    <p class="text-slate-300 text-base md:text-lg leading-relaxed" data-ar="من Web Applications وDashboards وAPIs إلى Security Assessment — أحول الأفكار والعمليات المعقدة إلى منتجات حقيقية جاهزة للاستخدام البرمجي والتجاري." data-en="From Web Applications, Dashboards, and APIs to Security Assessments — I turn complex ideas into production-ready digital products.">
+                        من Web Applications وDashboards وAPIs إلى Security Assessment — أحول الأفكار والعمليات المعقدة إلى منتجات حقيقية جاهزة للاستخدام البرمجي والتجاري.
+                    </p>
 
-                    <!-- English Bio -->
-                    <div id="bio-en" class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed hidden" dir="ltr">
-                        <p class="font-bold text-lg text-white">Software Engineer × Cybersecurity Specialist 🔐</p>
-                        <p class="text-slate-300">Building scalable software. Securing systems against vulnerabilities. Solving complex technical challenges.</p>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm font-semibold pt-2">
-                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-laptop-code text-blue-400 text-base"></i> 💻 Software Engineering</div>
-                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-user-ninja text-emerald-400 text-base"></i> 🔐 Cybersecurity & Ethical Hacking</div>
-                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-globe text-indigo-400 text-base"></i> 🌐 Advanced Web Development</div>
-                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-gears text-purple-400 text-base"></i> ⚙️ Systems & Automation</div>
-                        </div>
-                    </div>
-
-                    <div class="pt-2 font-mono text-xs md:text-sm text-emerald-400 font-semibold" id="slogan">
-                        "كود له هدف، بناء بدقة، وأمان من البداية. 🚀"
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap items-center gap-3 pt-2">
+                        <a href="#contact" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm shadow-xl transition flex items-center gap-2 transform hover:-translate-y-0.5">
+                            <span data-ar="🚀 اطلب مشروعك" data-en="🚀 Start Your Project">🚀 اطلب مشروعك</span>
+                        </a>
+                        <a href="#projects" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm border border-white/10 transition flex items-center gap-2">
+                            <span data-ar="👨‍💻 شوف أعمالي" data-en="👨‍💻 View Portfolio">👨‍💻 شوف أعمالي</span>
+                        </a>
+                        <a href="https://wa.me/201008119151" target="_blank" class="px-5 py-3.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 font-bold text-sm border border-emerald-500/30 transition flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span data-ar="💬 تحدث معي" data-en="💬 Chat Now">💬 تحدث معي</span>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Main Profile Picture -->
-                <div class="flex flex-col items-center justify-center">
-                    <div class="relative w-48 h-48 md:w-60 md:h-60 rounded-3xl p-1 bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 shadow-2xl avatar-glow group">
+                <div class="md:col-span-4 flex justify-center">
+                    <div class="relative w-48 h-48 md:w-56 md:h-56 rounded-3xl p-1 bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 shadow-2xl avatar-glow group">
                         <img src="me.jpeg" onerror="this.src='https://placehold.co/300x300/131c2e/3b82f6?text=Dev+Joo'" alt="Dev Joo" class="w-full h-full object-cover rounded-[22px]">
-                        <div class="absolute inset-0 rounded-[22px] bg-blue-600/10 opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education / Academic Degree Section -->
-        <section class="glow-card rounded-2xl p-6 border border-white/10 relative overflow-hidden">
-            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl shrink-0">
-                        <i class="fa-solid fa-graduation-cap"></i>
+        <!-- 16 — UNIQUE INTERACTIVE FEATURE: CHOOSE YOUR MISSION -->
+        <section id="mission" class="space-y-6">
+            <div class="text-center space-y-2">
+                <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase font-mono" data-ar="[ Interactive Mission Selector ]" data-en="[ Interactive Mission Selector ]">[ Interactive Mission Selector ]</span>
+                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="محتاج إيه لمشروعك؟" data-en="What is Your Main Goal?">محتاج إيه لمشروعك؟</h3>
+                <p class="text-slate-400 text-sm" data-ar="حدد هدفك وسنحدد لك الحل الأنسب مباشرة" data-en="Select your objective to reveal the exact solution">حدد هدفك وسنحدد لك الحل الأنسب مباشرة</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <button onclick="selectMission('website')" class="mission-btn p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/50 text-right transition group">
+                    <i class="fa-solid fa-globe text-2xl text-blue-400 mb-2 block group-hover:scale-110 transition"></i>
+                    <div class="font-bold text-white text-sm" data-ar="🚀 Launch a Website" data-en="🚀 Launch a Website">🚀 Launch a Website</div>
+                </button>
+                <button onclick="selectMission('dashboard')" class="mission-btn p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-blue-500/50 text-right transition group">
+                    <i class="fa-solid fa-chart-line text-2xl text-purple-400 mb-2 block group-hover:scale-110 transition"></i>
+                    <div class="font-bold text-white text-sm" data-ar="📊 Build a Dashboard" data-en="📊 Build a Dashboard">📊 Build a Dashboard</div>
+                </button>
+                <button onclick="selectMission('security')" class="mission-btn p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/50 text-right transition group">
+                    <i class="fa-solid fa-shield-halved text-2xl text-emerald-400 mb-2 block group-hover:scale-110 transition"></i>
+                    <div class="font-bold text-white text-sm" data-ar="🔐 Secure My App" data-en="🔐 Secure My App">🔐 Secure My App</div>
+                </button>
+                <button onclick="selectMission('automation')" class="mission-btn p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-yellow-500/50 text-right transition group">
+                    <i class="fa-solid fa-robot text-2xl text-yellow-400 mb-2 block group-hover:scale-110 transition"></i>
+                    <div class="font-bold text-white text-sm" data-ar="⚙️ Automate Work" data-en="⚙️ Automate Work">⚙️ Automate Work</div>
+                </button>
+            </div>
+
+            <!-- Mission Display Output -->
+            <div id="missionBox" class="glow-card rounded-2xl p-6 border border-blue-500/30 hidden">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="space-y-1">
+                        <h4 id="missionTitle" class="text-lg font-bold text-white"></h4>
+                        <p id="missionDesc" class="text-sm text-slate-300"></p>
                     </div>
+                    <a id="missionCta" href="#contact" class="px-5 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs shrink-0 hover:bg-blue-500 transition" data-ar="اطلب هذا الحل الآن" data-en="Get This Solution Now">اطلب هذا الحل الآن</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2 — VALUE PROPOSITION -->
+        <section class="space-y-6">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="مش بس بكتب Code — ببني حلول كاملة" data-en="Not Just Writing Code — Building Complete Solutions">مش بس بكتب Code — ببني حلول كاملة</h3>
+                <p class="text-slate-400 text-sm" data-ar="القيمة الحقيقية التي يحصل عليها مشروعك عند العمل معي" data-en="The real business value delivered to your project">القيمة الحقيقية التي يحصل عليها مشروعك عند العمل معي</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-4">
+                <div class="glow-card rounded-2xl p-5 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base" data-ar="Security-First Mindset" data-en="Security-First Mindset">Security-First Mindset</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed" data-ar="أبني الأنظمة مع مراعاة الأمان والتشفير وحماية البيانات من اليوم الأول، وليس بعد حدوث الثغرات." data-en="Building systems with security, encryption, and protection from day one, not after breaches happen.">
+                        أبني الأنظمة مع مراعاة الأمان والتشفير وحماية البيانات من اليوم الأول، وليس بعد حدوث الثغرات.
+                    </p>
+                </div>
+
+                <div class="glow-card rounded-2xl p-5 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base" data-ar="High Performance" data-en="High Performance">High Performance</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed" data-ar="واجهات وتطبيقات استثنائية السرعة، واستجابة فورية حتى مع زيادة حجم البيانات والضغط." data-en="Ultra-fast web interfaces and APIs designed for seamless user experiences under high traffic.">
+                        واجهات وتطبيقات استثنائية السرعة، واستجابة فورية حتى مع زيادة حجم البيانات والضغط.
+                    </p>
+                </div>
+
+                <div class="glow-card rounded-2xl p-5 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base" data-ar="Scalable Architecture" data-en="Scalable Architecture">Scalable Architecture</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed" data-ar="معمارية برمجية منظمة تسمح بنمو مشروعك وإضافة الميزات مستقبلاً بدون الحاجة لإعادة البناء." data-en="Clean architecture that allows your business to scale and add features seamlessly over time.">
+                        معمارية برمجية منظمة تسمح بنمو مشروعك وإضافة الميزات مستقبلاً بدون الحاجة لإعادة البناء.
+                    </p>
+                </div>
+
+                <div class="glow-card rounded-2xl p-5 space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h4 class="font-bold text-white text-base" data-ar="Clean & Maintainable" data-en="Clean & Maintainable">Clean & Maintainable</h4>
+                    <p class="text-xs text-slate-300 leading-relaxed" data-ar="كود نظيف، موثق، وسهل الصيانة طبقًا لأحدث الأساليب القياسية في هندسة البرمجيات." data-en="Well-documented, clean code strictly following modern industry standards for easy maintenance.">
+                        كود نظيف، موثق، وسهل الصيانة طبقًا لأحدث الأساليب القياسية في هندسة البرمجيات.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 — SERVICES -->
+        <section id="services" class="space-y-8">
+            <div class="text-center space-y-2">
+                <span class="text-xs font-bold text-blue-400 font-mono" data-ar="[ OUR CAPABILITIES ]" data-en="[ OUR CAPABILITIES ]">[ OUR CAPABILITIES ]</span>
+                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="إيه اللي أقدر أبنيه لك؟" data-en="What Can I Build For You?">إيه اللي أقدر أبنيه لك؟</h3>
+                <p class="text-slate-400 text-sm max-w-2xl mx-auto" data-ar="خدمات هندسة برمجيات وحلول أمنية متكاملة مصممة خصيصًا لتلبية احتياجات الشركات والأعمال." data-en="Comprehensive software engineering & security services tailored for your business needs.">
+                    خدمات هندسة برمجيات وحلول أمنية متكاملة مصممة خصيصًا لتلبية احتياجات الشركات والأعمال.
+                </p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- CAT 1: Web Development -->
+                <div class="glow-card rounded-2xl p-6 space-y-4 border border-blue-500/20">
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+                        <i class="fa-solid fa-code text-2xl text-blue-400"></i>
+                        <h4 class="font-bold text-white text-lg">Web Development</h4>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li>• Landing Pages & Business Websites</li>
+                        <li>• Web Applications & SaaS Platforms</li>
+                        <li>• Admin Dashboards & Management Systems</li>
+                        <li>• REST APIs & Backend Systems</li>
+                        <li>• Payment & Third-party Integrations</li>
+                    </ul>
+                    <div class="pt-2 border-t border-white/5 text-[11px] text-blue-300 font-semibold">
+                        <span data-ar="مناسب لـ: الشركات، الناشئة، وصناع المحتوى" data-en="Ideal for: Businesses, Startups, Creators">مناسب لـ: الشركات، الناشئة، وصناع المحتوى</span>
+                    </div>
+                </div>
+
+                <!-- CAT 2: Cybersecurity (Defensive) -->
+                <div class="glow-card rounded-2xl p-6 space-y-4 border border-emerald-500/20">
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+                        <i class="fa-solid fa-user-shield text-2xl text-emerald-400"></i>
+                        <h4 class="font-bold text-white text-lg">Cybersecurity Services</h4>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li>• Authorized Web & API Security Testing</li>
+                        <li>• Vulnerability Assessment & Auditing</li>
+                        <li>• OWASP Top 10 Web Vulnerability Review</li>
+                        <li>• Security Hardening (Linux Servers & Web)</li>
+                        <li>• Threat Modeling & Security Reports</li>
+                    </ul>
+                    <div class="pt-2 border-t border-white/5 text-[11px] text-emerald-300 font-semibold">
+                        <span data-ar="مناسب لـ: أصحاب المواقع والأنظمة القائمة" data-en="Ideal for: Existing Web Applications & Servers">مناسب لـ: أصحاب المواقع والأنظمة القائمة</span>
+                    </div>
+                </div>
+
+                <!-- CAT 3: Software Engineering -->
+                <div class="glow-card rounded-2xl p-6 space-y-4 border border-purple-500/20">
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+                        <i class="fa-solid fa-gears text-2xl text-purple-400"></i>
+                        <h4 class="font-bold text-white text-lg">Software Engineering</h4>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li>• Custom Business Management Tools</li>
+                        <li>• Database Systems & Architecture Design</li>
+                        <li>• Internal Company Utilities & Processing</li>
+                        <li>• Scalable System Integrations</li>
+                    </ul>
+                    <div class="pt-2 border-t border-white/5 text-[11px] text-purple-300 font-semibold">
+                        <span data-ar="مناسب لـ: أتمتة وإدارة عمليات المؤسسات" data-en="Ideal for: Enterprise Process Management">مناسب لـ: أتمتة وإدارة عمليات المؤسسات</span>
+                    </div>
+                </div>
+
+                <!-- CAT 4: Automation -->
+                <div class="glow-card rounded-2xl p-6 space-y-4 border border-yellow-500/20">
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+                        <i class="fa-solid fa-bolt text-2xl text-yellow-400"></i>
+                        <h4 class="font-bold text-white text-lg">Automation Solutions</h4>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li>• Python Task & Web Automation</li>
+                        <li>• Automated Data Processing & Reports</li>
+                        <li>• File System & Repetitive Task Automation</li>
+                        <li>• Custom API Automations</li>
+                    </ul>
+                    <div class="pt-2 border-t border-white/5 text-[11px] text-yellow-300 font-semibold">
+                        <span data-ar="مناسب لـ: توفير الوقت وتقليل الأخطاء البشرية" data-en="Ideal for: Saving Time & Manual Effort">مناسب لـ: توفير الوقت وتقليل الأخطاء البشرية</span>
+                    </div>
+                </div>
+
+                <!-- CAT 5: UI & Frontend -->
+                <div class="glow-card rounded-2xl p-6 space-y-4 border border-cyan-500/20">
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+                        <i class="fa-solid fa-desktop text-2xl text-cyan-400"></i>
+                        <h4 class="font-bold text-white text-lg">UI / Frontend Interfaces</h4>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li>• Modern Responsive React Interfaces</li>
+                        <li>• Tailwind CSS Custom Designs</li>
+                        <li>• Interactive Dark / Cyber Aesthetics</li>
+                        <li>• High-performing UX Optimization</li>
+                    </ul>
+                    <div class="pt-2 border-t border-white/5 text-[11px] text-cyan-300 font-semibold">
+                        <span data-ar="مناسب لـ: تحسين المظهر وزيادة المبيعات" data-en="Ideal for: Enhancing User Experience">مناسب لـ: تحسين المظهر وزيادة المبيعات</span>
+                    </div>
+                </div>
+
+                <!-- CAT 6: Deployment & Infrastructure -->
+                <div class="glow-card rounded-2xl p-6 space-y-4 border border-indigo-500/20">
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-3">
+                        <i class="fa-solid fa-server text-2xl text-indigo-400"></i>
+                        <h4 class="font-bold text-white text-lg">Deployment & Infrastructure</h4>
+                    </div>
+                    <ul class="text-xs text-slate-300 space-y-2">
+                        <li>• Linux Server Setup (Ubuntu / Debian)</li>
+                        <li>• Nginx, SSL, Domain Configuration</li>
+                        <li>• Basic Production Deployment Setup</li>
+                        <li>• Server Performance & Security Tweaks</li>
+                    </ul>
+                    <div class="pt-2 border-t border-white/5 text-[11px] text-indigo-300 font-semibold">
+                        <span data-ar="مناسب لـ: رفع المواقع وتأمين السيرفرات" data-en="Ideal for: Hosting & Server Setup">مناسب لـ: رفع المواقع وتأمين السيرفرات</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4 — SOLUTIONS MATCHING (PROBLEMS TO SOLUTIONS) -->
+        <section id="solutions" class="space-y-6">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="لو عندك المشكلة دي... أقدر أبني لك الحل ده" data-en="Have This Problem? Here is The Solution">لو عندك المشكلة دي... أقدر أبني لك الحل ده</h3>
+                <p class="text-slate-400 text-sm" data-ar="ربط التحديات التقنية التي تواجه عملك بالحلول المباشرة" data-en="Connecting your technical challenges directly to results">ربط التحديات التقنية التي تواجه عملك بالحلول المباشرة</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="glow-card rounded-2xl p-4 flex items-center justify-between border-l-4 border-l-blue-500">
                     <div>
-                        <h3 class="text-lg font-bold text-white" data-ar="بكالوريوس الحاسبات والمعلومات" data-en="Bachelor of Computer Science & Information">بكالوريوس الحاسبات والمعلومات</h3>
-                        <p class="text-xs md:text-sm text-slate-400 font-semibold mt-0.5" data-ar="دراسة أكاديمية متخصصة لمدة 4 سنوات في علوم الحاسب والأمن السيبراني" data-en="4-Year Academic Degree in Computer Science & Cybersecurity">دراسة أكاديمية متخصصة لمدة 4 سنوات في علوم الحاسب والأمن السيبراني</p>
+                        <div class="text-xs text-slate-400" data-ar="مشكلة: عندك Business وعايز حضور رقمي احترافي؟" data-en="Problem: Need a professional business presence?">مشكلة: عندك Business وعايز حضور رقمي احترافي؟</div>
+                        <div class="font-bold text-white text-sm mt-1" data-ar="← الحل: Modern Business Website / Landing Page" data-en="← Solution: Modern Business Website / Landing Page">← الحل: Modern Business Website / Landing Page</div>
                     </div>
                 </div>
-                <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-bold shrink-0" data-ar="4 سنوات دراسية 🎓" data-en="4-Year Degree 🎓">4 سنوات دراسية 🎓</span>
-            </div>
-        </section>
 
-        <!-- Tech Stack Section -->
-        <section class="space-y-4">
-            <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-microchip text-brand-500"></i>
-                <span data-ar="التقنيات وأدوات العمل (Tech Stack)" data-en="Tech Stack & Tools">التقنيات وأدوات العمل (Tech Stack)</span>
-            </h3>
-            <div class="flex flex-wrap gap-3">
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-blue-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-brands fa-python text-lg"></i> Python
+                <div class="glow-card rounded-2xl p-4 flex items-center justify-between border-l-4 border-l-emerald-500">
+                    <div>
+                        <div class="text-xs text-slate-400" data-ar="مشكلة: قلقان من ثغرات أو اختراق موقعك الحالي؟" data-en="Problem: Worried about site vulnerabilities?">مشكلة: قلقان من ثغرات أو اختراق موقعك الحالي؟</div>
+                        <div class="font-bold text-white text-sm mt-1" data-ar="← الحل: Authorized Security Assessment & Hardening" data-en="← Solution: Authorized Security Assessment & Hardening">← الحل: Authorized Security Assessment & Hardening</div>
+                    </div>
                 </div>
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-purple-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-solid fa-code text-lg"></i> C++
+
+                <div class="glow-card rounded-2xl p-4 flex items-center justify-between border-l-4 border-l-purple-500">
+                    <div>
+                        <div class="text-xs text-slate-400" data-ar="مشكلة: بتدير العمليات والبيانات يدويًا بشكل مجهد؟" data-en="Problem: Managing business operations manually?">مشكلة: بتدير العمليات والبيانات يدويًا بشكل مجهد؟</div>
+                        <div class="font-bold text-white text-sm mt-1" data-ar="← الحل: Custom Admin Dashboard & Management System" data-en="← Solution: Custom Admin Dashboard & Management System">← الحل: Custom Admin Dashboard & Management System</div>
+                    </div>
                 </div>
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-yellow-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-brands fa-js text-lg"></i> JavaScript
-                </div>
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-blue-300 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-solid fa-file-code text-lg"></i> TypeScript
-                </div>
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-orange-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-brands fa-html5 text-lg"></i> HTML5
-                </div>
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-blue-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-brands fa-css3-alt text-lg"></i> CSS3 / Tailwind
-                </div>
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-cyan-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-brands fa-react text-lg"></i> React
-                </div>
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-emerald-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-brands fa-node-js text-lg"></i> Node.js
-                </div>
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-emerald-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-solid fa-database text-lg"></i> SQL / MySQL
-                </div>
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-slate-200 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-solid fa-terminal text-lg"></i> Bash
-                </div>
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-red-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-brands fa-git-alt text-lg"></i> Git
-                </div>
-                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-cyan-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
-                    <i class="fa-brands fa-linux text-lg"></i> Linux
+
+                <div class="glow-card rounded-2xl p-4 flex items-center justify-between border-l-4 border-l-yellow-500">
+                    <div>
+                        <div class="text-xs text-slate-400" data-ar="مشكلة: عندك مهام وإدخال بيانات متكرر يوميًا؟" data-en="Problem: Repeating tedious tasks daily?">مشكلة: عندك مهام وإدخال بيانات متكرر يوميًا؟</div>
+                        <div class="font-bold text-white text-sm mt-1" data-ar="← الحل: Python Automation Script / Internal Utility" data-en="← Solution: Python Automation Script / Internal Utility">← الحل: Python Automation Script / Internal Utility</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Social Media & Contact Links -->
-        <section class="glow-card rounded-2xl p-6 space-y-4 border border-white/10">
-            <h3 class="text-lg font-bold text-white text-center" data-ar="تواصل معي مباشرة عبر المنصات" data-en="Connect With Me Directly">تواصل معي مباشرة عبر المنصات</h3>
+        <!-- 5 & 6 — FEATURED PROJECTS & CASE STUDIES -->
+        <section id="projects" class="space-y-8">
+            <div class="text-center space-y-2">
+                <span class="text-xs font-bold text-emerald-400 font-mono" data-ar="[ CASE STUDIES & PROJECTS ]" data-en="[ CASE STUDIES & PROJECTS ]">[ CASE STUDIES & PROJECTS ]</span>
+                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="نموذج من حلول ومشاريع سابقة" data-en="Featured Case Studies & Work">نموذج من حلول ومشاريع سابقة</h3>
+                <p class="text-slate-400 text-sm" data-ar="كيف أحول المشكلة البرمجية إلى منتج يعمل بكفاءة وأمان" data-en="How problems are converted into scalable secure applications">كيف أحول المشكلة البرمجية إلى منتج يعمل بكفاءة وأمان</p>
+            </div>
+
+            <!-- Project Card 1 -->
+            <div class="glow-card rounded-3xl p-6 md:p-8 space-y-6 border border-white/10">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-4">
+                    <div>
+                        <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold">Web App & Security</span>
+                        <h4 class="text-xl font-black text-white mt-2">Secure Business Dashboard System</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs text-slate-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-800">React</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-800">Node.js</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-800">SQL</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 text-xs md:text-sm">
+                    <div class="space-y-2">
+                        <div class="font-bold text-red-400 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> المشكلة:</div>
+                        <p class="text-slate-300">إدارة بيانات وصلاحيات فريق العمل كانت تتم بصورة غير آمنة ويدوية، مما سبب بطء الوصول للبيانات وثغرات تسريب محتملة.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="font-bold text-emerald-400 flex items-center gap-2"><i class="fa-solid fa-circle-check"></i> الحل والنتيجة:</div>
+                        <p class="text-slate-300">بناء لوحة تحكم كاملة بنظام Role-Based Access Control وتشفير الجلسات، مع تقليل وقت الوصول للبيانات بنسبة كبيرة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="glow-card rounded-3xl p-6 md:p-8 space-y-6 border border-white/10">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10 pb-4">
+                    <div>
+                        <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-bold">Automation & Systems</span>
+                        <h4 class="text-xl font-black text-white mt-2">Automated Data Processing & Report Utility</h4>
+                    </div>
+                    <div class="flex flex-wrap gap-2 font-mono text-xs text-slate-300">
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-800">Python</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-800">Linux Bash</span>
+                        <span class="px-2.5 py-1 rounded-lg bg-slate-800">REST API</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 text-xs md:text-sm">
+                    <div class="space-y-2">
+                        <div class="font-bold text-red-400 flex items-center gap-2"><i class="fa-solid fa-triangle-exclamation"></i> المشكلة:</div>
+                        <p class="text-slate-300">استهلاك ساعات يومية طويلة في تجميع التقارير البرمجية وإدخالها بين عدة أنظمة مختلفة.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="font-bold text-emerald-400 flex items-center gap-2"><i class="fa-solid fa-circle-check"></i> الحل والنتيجة:</div>
+                        <p class="text-slate-300">تطوير سكريبتات Python مؤتمتة تعمل تلقائيًا على سيرفر Linux، مما وفر العشرات من ساعات العمل الأسبوعية بدون أخطاء.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8 — WHY WORK WITH ME -->
+        <section class="space-y-6">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="ليه تشتغل مع Dev Joo Studio؟" data-en="Why Work With Dev Joo Studio?">ليه تشتغل مع Dev Joo Studio؟</h3>
+                <p class="text-slate-400 text-sm" data-ar="معايير الالتزام والجودة في كل مشروع" data-en="Core principles guiding every client project">معايير الالتزام والجودة في كل مشروع</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="glow-card rounded-2xl p-5 space-y-2">
+                    <div class="font-bold text-white text-sm"><i class="fa-solid fa-lock text-emerald-400"></i> أمان مدمج بالأصل</div>
+                    <p class="text-xs text-slate-300">حماية تطبيقك وسيرفرك خطوة أساسية أثناء البناء وليس إضافة متأخرة.</p>
+                </div>
+                <div class="glow-card rounded-2xl p-5 space-y-2">
+                    <div class="font-bold text-white text-sm"><i class="fa-solid fa-comments text-blue-400"></i> تواصل سريع ومباشر</div>
+                    <p class="text-xs text-slate-300">تحديثات دورية وشفافية كاملة في كل مراحل تنفيذ المشروع.</p>
+                </div>
+                <div class="glow-card rounded-2xl p-5 space-y-2">
+                    <div class="font-bold text-white text-sm"><i class="fa-solid fa-file-code text-indigo-400"></i> توثيق الكود والمعمارية</div>
+                    <p class="text-xs text-slate-300">تسليم الكود موثقًا بشكل يسهل على أي مطور تعامل مستقبلي معه.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9 — PROCESS -->
+        <section id="process" class="space-y-8">
+            <div class="text-center space-y-2">
+                <span class="text-xs font-bold text-blue-400 font-mono" data-ar="[ WORKFLOW ]" data-en="[ WORKFLOW ]">[ WORKFLOW ]</span>
+                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="خطوات العمل على مشروعك" data-en="Project Execution Workflow">خطوات العمل على مشروعك</h3>
+                <p class="text-slate-400 text-sm" data-ar="من الفكرة الأولى وحتى الإطلاق والدعم" data-en="Structured methodology from discovery to launch">من الفكرة الأولى وحتى الإطلاق والدعم</p>
+            </div>
+
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <a href="https://wa.me/201008119151" target="_blank" class="cyber-border flex items-center justify-center gap-2 p-3.5 rounded-xl bg-emerald-600/10 text-emerald-400 hover:text-white transition text-xs md:text-sm font-bold">
-                    <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp
-                </a>
-                <a href="https://www.facebook.com/share/18FZKfKQeJ/" target="_blank" class="cyber-border flex items-center justify-center gap-2 p-3.5 rounded-xl bg-blue-600/10 text-blue-400 hover:text-white transition text-xs md:text-sm font-bold">
-                    <i class="fa-brands fa-facebook text-xl"></i> Facebook
-                </a>
-                <a href="https://www.instagram.com/ly3vx7?stkn=MTN2NzZ1bm1oNnJ3cA==" target="_blank" class="cyber-border flex items-center justify-center gap-2 p-3.5 rounded-xl bg-pink-600/10 text-pink-400 hover:text-white transition text-xs md:text-sm font-bold">
-                    <i class="fa-brands fa-instagram text-xl"></i> Instagram
-                </a>
-                <a href="tel:01008119151" class="cyber-border flex items-center justify-center gap-2 p-3.5 rounded-xl bg-indigo-600/10 text-indigo-400 hover:text-white transition text-xs md:text-sm font-bold">
-                    <i class="fa-solid fa-phone text-xl"></i> Call Me
-                </a>
+                <div class="glow-card rounded-2xl p-5 text-center space-y-2">
+                    <div class="w-8 h-8 rounded-full bg-blue-600/20 text-blue-400 font-bold mx-auto flex items-center justify-center text-sm">01</div>
+                    <h4 class="font-bold text-white text-sm" data-ar="Discovery" data-en="Discovery">Discovery</h4>
+                    <p class="text-[11px] text-slate-400" data-ar="فهم أهداف المشروع والتحديات" data-en="Understanding requirements">فهم أهداف المشروع والتحديات</p>
+                </div>
+
+                <div class="glow-card rounded-2xl p-5 text-center space-y-2">
+                    <div class="w-8 h-8 rounded-full bg-blue-600/20 text-blue-400 font-bold mx-auto flex items-center justify-center text-sm">02</div>
+                    <h4 class="font-bold text-white text-sm" data-ar="Architecture" data-en="Architecture">Architecture</h4>
+                    <p class="text-[11px] text-slate-400" data-ar="تحديد معمارية النظام والأمان" data-en="Designing system structure">تحديد معمارية النظام والأمان</p>
+                </div>
+
+                <div class="glow-card rounded-2xl p-5 text-center space-y-2">
+                    <div class="w-8 h-8 rounded-full bg-blue-600/20 text-blue-400 font-bold mx-auto flex items-center justify-center text-sm">03</div>
+                    <h4 class="font-bold text-white text-sm" data-ar="Development" data-en="Development">Development</h4>
+                    <p class="text-[11px] text-slate-400" data-ar="كتابة الكود والواجهات بكفاءة" data-en="Building clean features">كتابة الكود والواجهات بكفاءة</p>
+                </div>
+
+                <div class="glow-card rounded-2xl p-5 text-center space-y-2">
+                    <div class="w-8 h-8 rounded-full bg-emerald-600/20 text-emerald-400 font-bold mx-auto flex items-center justify-center text-sm">04</div>
+                    <h4 class="font-bold text-white text-sm" data-ar="Deployment" data-en="Deployment">Deployment</h4>
+                    <p class="text-[11px] text-slate-400" data-ar="الاختبار والنشر والتشغيل" data-en="Testing & Going live">الاختبار والنشر والتشغيل</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7 — TECH STACK -->
+        <section class="space-y-6">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="التقنيات المستخدمة (Tech Stack)" data-en="Tech Stack & Tools">التقنيات المستخدمة (Tech Stack)</h3>
+                <p class="text-slate-400 text-sm" data-ar="أدوات ولغات مبني بها حلول المشروع" data-en="Technologies utilized to build high-grade solutions">أدوات ولغات مبني بها حلول المشروع</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3">
+                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-blue-400 flex items-center gap-2">
+                    <i class="fa-brands fa-python text-base"></i> Python (Automation & Backend)
+                </div>
+                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-cyan-400 flex items-center gap-2">
+                    <i class="fa-brands fa-react text-base"></i> React & JavaScript
+                </div>
+                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-emerald-400 flex items-center gap-2">
+                    <i class="fa-brands fa-node-js text-base"></i> Node.js & REST APIs
+                </div>
+                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-purple-400 flex items-center gap-2">
+                    <i class="fa-solid fa-code text-base"></i> C++ Systems
+                </div>
+                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-yellow-400 flex items-center gap-2">
+                    <i class="fa-solid fa-database text-base"></i> SQL & Databases
+                </div>
+                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-slate-200 flex items-center gap-2">
+                    <i class="fa-brands fa-linux text-base"></i> Linux & Bash
+                </div>
+            </div>
+        </section>
+
+        <!-- 10 — PACKAGES / SERVICE OPTIONS -->
+        <section class="space-y-6">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="بااقات ونطاق العمل" data-en="Service Packages">بااقات ونطاق العمل</h3>
+                <p class="text-slate-400 text-sm" data-ar="اختر النطاق الأنسب لمشروعك للحصول على عرض مخصص" data-en="Choose the fitting scope for a custom quote">اختر النطاق الأنسب لمشروعك للحصول على عرض مخصص</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glow-card rounded-2xl p-6 space-y-4 border border-white/10 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-xs font-bold font-mono text-blue-400">STARTER</span>
+                        <h4 class="text-lg font-bold text-white">Essential Web</h4>
+                        <p class="text-xs text-slate-300">للمواقع التعريفية وصفحات الهبوط للشركات والأفراد مع واجهة متجاوبة وسريعة.</p>
+                    </div>
+                    <a href="#contact" class="w-full py-2.5 rounded-xl bg-slate-800 text-white text-center font-bold text-xs hover:bg-slate-700 transition">طلب عرض أسعار</a>
+                </div>
+
+                <div class="glow-card rounded-2xl p-6 space-y-4 border border-blue-500/40 relative flex flex-col justify-between">
+                    <span class="absolute -top-3 right-4 px-2.5 py-0.5 rounded-full bg-blue-600 text-[10px] font-bold text-white">RECOMMENDED</span>
+                    <div class="space-y-3">
+                        <span class="text-xs font-bold font-mono text-emerald-400">BUSINESS</span>
+                        <h4 class="text-lg font-bold text-white">Full App & Dashboard</h4>
+                        <p class="text-xs text-slate-300">أنظمة ومواقع كاملة تشمل لوحات تحكم، قواعد بيانات، وتكامل أمني متقدم.</p>
+                    </div>
+                    <a href="#contact" class="w-full py-2.5 rounded-xl bg-blue-600 text-white text-center font-bold text-xs hover:bg-blue-500 transition">طلب عرض أسعار</a>
+                </div>
+
+                <div class="glow-card rounded-2xl p-6 space-y-4 border border-white/10 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-xs font-bold font-mono text-purple-400">CUSTOM</span>
+                        <h4 class="text-lg font-bold text-white">Security & Automation</h4>
+                        <p class="text-xs text-slate-300">فحص أمان واستشارات برمجية، أو تطوير أدوات أتمتة مخصصة بالكامل.</p>
+                    </div>
+                    <a href="#contact" class="w-full py-2.5 rounded-xl bg-slate-800 text-white text-center font-bold text-xs hover:bg-slate-700 transition">طلب عرض أسعار</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12 — ABOUT ME / STUDIO -->
+        <section id="about" class="glow-card rounded-3xl p-6 md:p-8 space-y-4 border border-white/10">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-graduation-cap text-blue-400"></i>
+                <span data-ar="عن Dev Joo Studio" data-en="About Dev Joo Studio">عن Dev Joo Studio</span>
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed" data-ar="أقود Dev Joo كـ Software Engineer ومتخصص في الأمن السيبراني، مع خلفية أكاديمية متخصصة (بكالوريوس الحاسبات والمعلومات - 4 سنوات دراسية). أجمع بين دقة البناء البرمجي وحماية الأنظمة الرقمية لتقديم حلول متكاملة تضمن أعلى أداء وأقصى درجات الأمان." data-en="Leading Dev Joo as a Software Engineer & Cybersecurity Specialist with a 4-Year Academic Degree in Computer Science. Combining technical engineering precision with robust security standards.">
+                أقود Dev Joo كـ Software Engineer ومتخصص في الأمن السيبراني، مع خلفية أكاديمية متخصصة (بكالوريوس الحاسبات والمعلومات - 4 سنوات دراسية). أجمع بين دقة البناء البرمجي وحماية الأنظمة الرقمية لتقديم حلول متكاملة تضمن أعلى أداء وأقصى درجات الأمان.
+            </p>
+        </section>
+
+        <!-- 26 — FAQ SECTION -->
+        <section id="faq" class="space-y-6">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="الأسئلة الشائعة" data-en="Frequently Asked Questions">الأسئلة الشائعة</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4 text-xs md:text-sm">
+                <div class="glow-card rounded-2xl p-5 space-y-2">
+                    <div class="font-bold text-white"><i class="fa-solid fa-circle-question text-blue-400"></i> هل تعمل مع شركات وأفراد؟</div>
+                    <p class="text-slate-300">نعم، أقدم الخدمات للشركات الناشئة، أصحاب الأعمال، والأفراد الذين يحتاجون لحلول برمجية أو أمنية مخصصة.</p>
+                </div>
+                <div class="glow-card rounded-2xl p-5 space-y-2">
+                    <div class="font-bold text-white"><i class="fa-solid fa-circle-question text-emerald-400"></i> كيف يتم تحديد تكلفة ومدة المشروع؟</div>
+                    <p class="text-slate-300">يتم تحديد ذلك بناءً على حجم المتطلبات والتفاصيل الفنية بعد مناقشتها واستلام نطاق العمل المبدئي.</p>
+                </div>
+                <div class="glow-card rounded-2xl p-5 space-y-2">
+                    <div class="font-bold text-white"><i class="fa-solid fa-circle-question text-purple-400"></i> هل توفر دعمًا وتقارير بعد التسليم؟</div>
+                    <p class="text-slate-300">نعم، يشتمل كل مشروع على فترة دعم متابعة وتوثيق تقني شامل لضمان استقرار العمليات.</p>
+                </div>
+                <div class="glow-card rounded-2xl p-5 space-y-2">
+                    <div class="font-bold text-white"><i class="fa-solid fa-circle-question text-yellow-400"></i> هل تقدم خدمات الأمن السيبراني بشكل رسمي وأخلاقي؟</div>
+                    <p class="text-slate-300">بالتأكيد، جميع الاختبارات الأمنية والفحوصات تتم بإذن رسمي ومصرح بها (Authorized Security Assessment) فقط.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14 — CONTACT SECTION -->
+        <section id="contact" class="glow-card rounded-3xl p-6 md:p-10 space-y-8 border border-blue-500/30">
+            <div class="text-center space-y-2">
+                <h3 class="text-2xl md:text-4xl font-black text-white" data-ar="عندك فكرة أو مشروع؟ خلينا نبنيها." data-en="Have an Idea or Project? Let's Build It.">عندك فكرة أو مشروع؟ خلينا نبنيها.</h3>
+                <p class="text-slate-300 text-sm" data-ar="تواصل معي مباشرة لمناقشة التفاصيل وبدء التنفيذ" data-en="Get in touch directly to discuss details and start">تواصل معي مباشرة لمناقشة التفاصيل وبدء التنفيذ</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <!-- Direct Direct Channels -->
+                <div class="space-y-4">
+                    <h4 class="font-bold text-white text-base" data-ar="قنوات التواصل المباشر" data-en="Direct Communication Channels">قنوات التواصل المباشر</h4>
+                    
+                    <a href="https://wa.me/201008119151" target="_blank" class="cyber-border flex items-center gap-3 p-4 rounded-2xl bg-emerald-600/10 text-emerald-400 hover:text-white transition">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <div>
+                            <div class="font-bold text-sm">WhatsApp</div>
+                            <div class="text-xs text-slate-400">رد سريع للمشاريع والاستفسارات</div>
+                        </div>
+                    </a>
+
+                    <a href="tel:01008119151" class="cyber-border flex items-center gap-3 p-4 rounded-2xl bg-blue-600/10 text-blue-400 hover:text-white transition">
+                        <i class="fa-solid fa-phone text-2xl"></i>
+                        <div>
+                            <div class="font-bold text-sm">Direct Call</div>
+                            <div class="text-xs text-slate-400">+20 100 811 9151</div>
+                        </div>
+                    </a>
+
+                    <div class="flex gap-3 pt-2">
+                        <a href="https://www.facebook.com/share/18FZKfKQeJ/" target="_blank" class="flex-1 p-3 rounded-xl bg-slate-900 text-center font-bold text-xs text-slate-300 hover:text-white border border-slate-800"><i class="fa-brands fa-facebook text-base"></i> Facebook</a>
+                        <a href="https://www.instagram.com/ly3vx7?stkn=MTN2NzZ1bm1oNnJ3cA==" target="_blank" class="flex-1 p-3 rounded-xl bg-slate-900 text-center font-bold text-xs text-slate-300 hover:text-white border border-slate-800"><i class="fa-brands fa-instagram text-base"></i> Instagram</a>
+                    </div>
+                </div>
+
+                <!-- Simple Contact Request Box -->
+                <div class="p-6 rounded-2xl bg-slate-950/60 border border-white/10 space-y-4">
+                    <h4 class="font-bold text-white text-base" data-ar="طلب مشروع جديد" data-en="New Project Inquiry">طلب مشروع جديد</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed" data-ar="للحصول على أسرع استجابة، يمكنك مراسلتي عبر الواتساب مباشرة مبيناً نوع الخدمة المطلوبة ونبذة عن مشروعك." data-en="For the fastest response, send a message directly on WhatsApp with your project scope.">
+                        للحصول على أسرع استجابة، يمكنك مراسلتي عبر الواتساب مباشرة مبيناً نوع الخدمة المطلوبة ونبذة عن مشروعك.
+                    </p>
+                    <a href="https://wa.me/201008119151?text=%D0%A3%D1%81%D0%BB%D0%B0%D0%BC%20%D1%8B%D0%B9%D0%BA%D0%BC%D1%8F%D1%80%20Dev%20Joo%20%D0%B9%D0%B1%D1%8F%D1%80%D0%B3%20%D0%B0%D0%B3%D0%BB%D0%B1%20%D0%BC%D1%88%D1%80%D0%BE%D1%89" target="_blank" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg transition">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>إرسال التفاصيل عبر الواتساب</span>
+                    </a>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/10 py-6 text-center text-xs text-slate-400 backdrop-blur-md">
-        <p>© 2026 Dev Joo. All Rights Reserved. Built with Precision & Security.</p>
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 py-8 text-center text-xs text-slate-400 backdrop-blur-md space-y-2">
+        <p>© 2026 Dev Joo Studio. All Rights Reserved.</p>
+        <p class="text-[11px] text-slate-500">Built with Engineering Precision, Performance & Defensive Security Standards.</p>
     </footer>
 
-    <!-- Interactive Language Switcher Script -->
+    <!-- INTERACTIVE SCRIPTS -->
     <script>
         let currentLang = 'ar';
 
         function toggleLanguage() {
             const html = document.documentElement;
-            const bioAr = document.getElementById('bio-ar');
-            const bioEn = document.getElementById('bio-en');
             const langLabel = document.getElementById('langLabel');
-            const slogan = document.getElementById('slogan');
 
             if (currentLang === 'ar') {
                 currentLang = 'en';
                 html.setAttribute('dir', 'ltr');
                 html.setAttribute('lang', 'en');
-                bioAr.classList.add('hidden');
-                bioEn.classList.remove('hidden');
                 langLabel.innerText = 'العربية';
-                slogan.innerText = '"Code with purpose. Build with precision. Secure by design. 🚀"';
 
                 document.querySelectorAll('[data-en]').forEach(el => {
                     el.innerText = el.getAttribute('data-en');
@@ -285,14 +748,44 @@
                 currentLang = 'ar';
                 html.setAttribute('dir', 'rtl');
                 html.setAttribute('lang', 'ar');
-                bioEn.classList.add('hidden');
-                bioAr.classList.remove('hidden');
                 langLabel.innerText = 'English';
-                slogan.innerText = '"كود له هدف، بناء بدقة، وأمان من البداية. 🚀"';
 
                 document.querySelectorAll('[data-ar]').forEach(el => {
                     el.innerText = el.getAttribute('data-ar');
                 });
+            }
+        }
+
+        // Mission Selector Logic
+        const missions = {
+            website: {
+                title: "🚀 Launch a Website / Web Application",
+                desc: "بناء موقع تعريفي، منصة، أو تطبيق ويب متجاوب وسريع ومحسّن للظهور في محركات البحث."
+            },
+            dashboard: {
+                title: "📊 Custom Admin Dashboard & Management System",
+                desc: "تطوير لوحة تحكم مخصصة لإدارة العمليات والموظفين والبيانات وصلاحيات المستخدمين بأمان."
+            },
+            security: {
+                title: "🔐 Web Security Assessment & Hardening",
+                desc: "فحص أمان مصرح به وتدقيق ثغرات OWASP للأنظمة والمواقع وحمايتها قبل الإطلاق."
+            },
+            automation: {
+                title: "⚙️ Custom Task Automation & Python Scripts",
+                desc: "أتمتة العمليات المكررة وإدخال البيانات ومعالجتها لتوفير الوقت والجهد البشري."
+            }
+        };
+
+        function selectMission(key) {
+            const box = document.getElementById('missionBox');
+            const title = document.getElementById('missionTitle');
+            const desc = document.getElementById('missionDesc');
+
+            if (missions[key]) {
+                title.innerText = missions[key].title;
+                desc.innerText = missions[key].desc;
+                box.classList.remove('hidden');
+                box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
         }
     </script>
