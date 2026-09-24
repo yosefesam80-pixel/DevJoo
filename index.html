@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Joo | الملف الشخصي والموقع الاحترافي</title>
+    <title>Dev Joo | Software Engineer & Cybersecurity Specialist</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Inter & Cairo -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <!-- Google Fonts Cairo & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
@@ -18,15 +18,18 @@
                     colors: {
                         brand: {
                             50: '#f0f6ff',
-                            100: '#e0edff',
                             500: '#3b82f6',
                             600: '#2563eb',
                             700: '#1d4ed8',
+                            cyber: '#10b981',
                             accent: '#8b5cf6',
+                            dark: '#0b0f17',
+                            card: '#131c2e'
                         }
                     },
                     fontFamily: {
                         cairo: ['Cairo', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
                     }
                 }
             }
@@ -34,316 +37,195 @@
     </script>
     <style>
         body {
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Cairo', 'Inter', sans-serif;
             background-color: #0b0f17;
             color: #f3f4f6;
-            overflow-x: hidden;
         }
-
-        /* Glassmorphism Card Style */
-        .glass-card {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+        .glow-card {
+            background: linear-gradient(135deg, rgba(19, 28, 46, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
             border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
         }
-
-        .glass-card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .glow-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
         }
-
-        .glass-card-hover:hover {
-            transform: translateY(-5px);
-            background: rgba(30, 41, 59, 0.8);
-            border-color: rgba(99, 102, 241, 0.4);
-            box-shadow: 0 12px 30px -10px rgba(79, 70, 229, 0.25);
-        }
-
-        /* Gradient Text Effects */
-        .gradient-text {
-            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-        }
-
-        /* Animated Glowing Sphere */
-        .glow-sphere {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
-            filter: blur(40px);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Smooth Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f17;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #374151;
+        .avatar-glow {
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.35);
         }
     </style>
 </head>
-<body class="min-h-screen relative flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
 
-    <!-- Background Animated Glow Spheres -->
-    <div class="glow-sphere top-[-50px] right-[-50px]"></div>
-    <div class="glow-sphere bottom-10 left-[-50px] opacity-60"></div>
-
-    <header class="sticky top-0 z-50 backdrop-blur-md border-b border-gray-800/60 bg-gray-950/60">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <!-- Navbar Header -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-dark/80 border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center font-black text-white text-xl shadow-lg shadow-indigo-500/20">
-                    D
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 avatar-glow">
+                    <img src="my-photo.jpg" onerror="this.src='https://placehold.co/150x150/131c2e/3b82f6?text=Dev+Joo'" alt="Dev Joo Profile" class="w-full h-full object-cover rounded-full">
                 </div>
-                <span class="font-bold text-xl tracking-wide text-white">Dev<span class="text-indigo-400"> Joo</span></span>
+                <div>
+                    <h1 class="text-xl font-extrabold tracking-wide text-white">Dev Joo</h1>
+                    <p class="text-xs text-brand-cyber flex items-center gap-1 font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span data-ar="م متاح للمشاريع والأمن السيبراني" data-en="Available for Projects & Security">متاح للمشاريع والأمن السيبراني</span>
+                    </p>
+                </div>
             </div>
-            
-            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-300">
-                <a href="#about" class="hover:text-indigo-400 transition-colors">عني</a>
-                <a href="#skills" class="hover:text-indigo-400 transition-colors">المهارات</a>
-                <a href="#stats" class="hover:text-indigo-400 transition-colors">الإحصائيات</a>
-                <a href="#contact" class="hover:text-indigo-400 transition-colors">التواصل</a>
-            </nav>
 
             <div class="flex items-center gap-3">
-                <a href="https://wa.me/201008119151" target="_blank" class="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition-all shadow-md shadow-emerald-600/20 flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-sm"></i>
-                    <span>واتساب مباشر</span>
-                </a>
-                <button onclick="toggleSpecialGreeting()" class="px-3 py-2 rounded-xl text-xs font-bold gradient-bg text-white hover:opacity-90 transition-all shadow-md shadow-indigo-500/20 flex items-center gap-1.5">
-                    <i class="fa-solid fa-sparkles"></i>
-                    <span class="hidden sm:inline">تفاعل سريع</span>
+                <!-- Language Toggle Button -->
+                <button id="langToggle" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-bold text-white transition flex items-center gap-2 border border-white/10">
+                    <i class="fa-solid fa-globe text-brand-500"></i>
+                    <span id="langLabel">English</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10 flex-grow">
+    <!-- Main Hero Section -->
+    <main class="max-w-6xl mx-auto px-4 py-8 md:py-12 space-y-10 flex-grow">
+        
+        <!-- Hero Bio Card -->
+        <section class="glow-card rounded-3xl p-6 md:p-10 relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-brand-cyber/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <section id="about" class="mb-16">
-            <div class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden">
-                <div class="absolute -left-12 -bottom-12 w-48 h-48 bg-indigo-600/10 rounded-full blur-2xl"></div>
-                
-                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 relative z-10">
-                    <div class="relative">
-                        <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-2xl p-1 gradient-bg shadow-2xl shadow-indigo-500/30">
-                            <img src="https://placehold.co/200x200/111827/6366f1?text=DEV+JOO" alt="Profile Avatar" class="w-full h-full object-cover rounded-xl">
-                        </div>
-                        <div class="absolute -bottom-2 -right-2 bg-emerald-500 text-gray-950 font-bold text-xs px-3 py-1 rounded-full border-2 border-gray-900 flex items-center gap-1.5 shadow-lg">
-                            <span class="w-2 h-2 rounded-full bg-gray-950 animate-ping"></span>
-                            متاح للمشاريع
-                        </div>
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-2 space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span data-ar="هندسة البرمجيات & الأمن السيبراني" data-en="Software Engineering & Cybersecurity">هندسة البرمجيات & الأمن السيبراني</span>
                     </div>
 
-                    <div class="text-center lg:text-right flex-1">
-                        <div class="inline-block px-3 py-1 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 rounded-lg text-xs font-bold mb-3">
-                            مطور ومصمم شغوف 🚀
-                        </div>
-                        <h1 class="text-3xl sm:text-5xl font-extrabold text-white mb-4 leading-tight">
-                            أهلاً بك، أنا <span class="gradient-text">Dev Joo</span>
-                        </h1>
-                        <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
-                            مهندس حلول برمجية ومطور تطبيقات وشغوف ببناء التجارب الرقمية الفريدة باستخدام أحدث التقنيات مثل C++، وتطوير واجهات المستخدم التفاعلية ذات الأداء العالي.
-                        </p>
-                        
-                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                            <a href="https://wa.me/201008119151" target="_blank" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-600/30 transition-all flex items-center gap-2">
-                                <i class="fa-brands fa-whatsapp text-base"></i>
-                                تواصل معي عبر الواتساب
-                            </a>
-                            <a href="tel:01008119151" class="px-6 py-3 rounded-xl bg-gray-800/80 hover:bg-gray-700/80 text-gray-200 border border-gray-700 font-bold text-sm transition-all flex items-center gap-2">
-                                <i class="fa-solid fa-phone text-indigo-400"></i>
-                                01008119151
-                            </a>
-                        </div>
+                    <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">
+                        <span data-ar="أهلاً بك، أنا " data-en="Welcome, I'm ">أهلاً بك، أنا </span>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400">Dev Joo</span>
+                    </h2>
+
+                    <!-- Arabic Bio Content -->
+                    <div id="bio-ar" class="space-y-3 text-slate-300 text-sm md:text-base leading-relaxed">
+                        <p class="font-bold text-lg text-white">مهندس برمجيات × متخصص في الأمن السيبراني 🔐</p>
+                        <p class="text-blue-200/90">ببني برمجيات وبأمّن أنظمة وبحل المشاكل التقنية.</p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs md:text-sm font-semibold pt-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-laptop-code text-blue-400"></i> 💻 هندسة البرمجيات</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-user-ninja text-emerald-400"></i> 🔐 الأمن السيبراني والاختبار الأخلاقي</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-indigo-400"></i> 🌐 تطوير الويب</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-gears text-purple-400"></i> ⚙️ الأنظمة والأتمتة</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-brain text-amber-400"></i> 🧠 حل المشكلات</li>
+                        </ul>
+                    </div>
+
+                    <!-- English Bio Content (Hidden initially) -->
+                    <div id="bio-en" class="space-y-3 text-slate-300 text-sm md:text-base leading-relaxed hidden" dir="ltr">
+                        <p class="font-bold text-lg text-white">Software Engineer × Cybersecurity Specialist 🔐</p>
+                        <p class="text-blue-200/90">Building software. Securing systems. Solving problems.</p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs md:text-sm font-semibold pt-2">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-laptop-code text-blue-400"></i> 💻 Software Engineering</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-user-ninja text-emerald-400"></i> 🔐 Cybersecurity & Ethical Hacking</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-indigo-400"></i> 🌐 Web Development</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-gears text-purple-400"></i> ⚙️ Systems & Automation</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-brain text-amber-400"></i> 🧠 Problem Solving</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 italic text-xs md:text-sm text-emerald-400 font-semibold" id="slogan">
+                        "كود له هدف، بناء بدقة، وأمان من البداية. 🚀"
+                    </div>
+                </div>
+
+                <!-- Profile Large Display for Desktop -->
+                <div class="flex flex-col items-center justify-center space-y-4">
+                    <div class="w-40 h-40 md:w-52 md:h-52 rounded-2xl p-1 bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 shadow-2xl">
+                        <img src="my-photo.jpg" onerror="this.src='https://placehold.co/300x300/131c2e/3b82f6?text=Dev+Joo'" alt="Dev Joo" class="w-full h-full object-cover rounded-xl">
                     </div>
                 </div>
             </div>
         </section>
 
-        <div id="greetingBanner" class="hidden mb-12 transform transition-all duration-300">
-            <div class="p-6 rounded-2xl bg-indigo-950/40 border border-indigo-500/30 flex items-center justify-between gap-4">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl">
-                        <i class="fa-solid fa-face-smile"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-white text-base mb-1">يسعدني تواجدك هنا!</h4>
-                        <p class="text-xs text-indigo-200" id="greetingText">أتمنى لك يومًا سعيدًا وجولة ممتعة في معرض الأعمال.</p>
-                    </div>
-                </div>
-                <button onclick="toggleSpecialGreeting()" class="text-gray-400 hover:text-white p-2">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-        </div>
-
-        <section id="skills" class="mb-16">
-            <div class="flex items-center gap-3 mb-8">
-                <div class="w-3 h-8 rounded-full gradient-bg"></div>
-                <h2 class="text-2xl font-bold text-white">المهارات والتخصصات</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Skill Card 1 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 relative group">
-                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">تطوير البرمجيات بـ C++</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        بناء خوارزميات عالية الكفاءة، معالجة البيانات، وإدارة الذاكرة بأسلوب احترافي وسريع.
-                    </p>
-                    <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                        <div class="bg-blue-500 h-full rounded-full" style="width: 88%"></div>
-                    </div>
-                </div>
-
-                <!-- Skill Card 2 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 relative group">
-                    <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">تصميم واجهات الويب UI/UX</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        إنشاء صفحات ومواقع إنترنت متجاوبة، داكنة وأنيقة تناسب جميع الشاشات والمستخدمين.
-                    </p>
-                    <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                        <div class="bg-purple-500 h-full rounded-full" style="width: 92%"></div>
-                    </div>
-                </div>
-
-                <!-- Skill Card 3 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 relative group">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-gamepad"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">تطوير الألعاب والحلول</h3>
-                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
-                        العمل على الميكانيكيات التفاعلية والمحاكاة البرمجية للألعاب والمشاريع الشخصية.
-                    </p>
-                    <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                        <div class="bg-emerald-500 h-full rounded-full" style="width: 80%"></div>
-                    </div>
-                </div>
+        <!-- Tech Stack Section -->
+        <section class="space-y-4">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-code text-brand-500"></i>
+                <span data-ar="التقنيات وأدوات العمل (Tech Stack)" data-en="Tech Stack & Tools">التقنيات وأدوات العمل (Tech Stack)</span>
+            </h3>
+            <div class="flex flex-wrap gap-2 md:gap-3">
+                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-blue-400 hover:scale-105 transition">Python</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-purple-400 hover:scale-105 transition">C++</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-yellow-400 hover:scale-105 transition">JavaScript</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-blue-300 hover:scale-105 transition">TypeScript</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-emerald-400 hover:scale-105 transition">SQL</span>
+                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-slate-200 hover:scale-105 transition">Bash</span>
             </div>
         </section>
 
-        <section id="stats" class="mb-16">
-            <div class="glass-card rounded-2xl p-8 border border-gray-800">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div class="p-4">
-                        <div id="stat1" class="text-3xl sm:text-4xl font-black gradient-text mb-1">0</div>
-                        <div class="text-xs text-gray-400 font-semibold">مشروع مكتمل</div>
-                    </div>
-                    <div class="p-4">
-                        <div id="stat2" class="text-3xl sm:text-4xl font-black text-indigo-400 mb-1">0</div>
-                        <div class="text-xs text-gray-400 font-semibold">سطر برمودي C++</div>
-                    </div>
-                    <div class="p-4">
-                        <div id="stat3" class="text-3xl sm:text-4xl font-black text-purple-400 mb-1">0</div>
-                        <div class="text-xs text-gray-400 font-semibold">ساعات البرمجة</div>
-                    </div>
-                    <div class="p-4">
-                        <div id="stat4" class="text-3xl sm:text-4xl font-black text-emerald-400 mb-1">0</div>
-                        <div class="text-xs text-gray-400 font-semibold">تقييم المهارة</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="mb-12">
-            <div class="glass-card rounded-3xl p-8 text-center relative overflow-hidden">
-                <h3 class="text-2xl font-bold text-white mb-2">دعنا نتواصل معاً</h3>
-                <p class="text-gray-400 text-xs sm:text-sm mb-6 max-w-md mx-auto">
-                    هل لديك فكرة مشروع جديدة أو تريد الاستفسار عن كود برمجي؟ يسعدني دائماً التواصل معك!
-                </p>
-
-                <div class="flex justify-center items-center gap-4 flex-wrap">
-                    <a href="https://wa.me/201008119151" target="_blank" class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-600/30 transition-all flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                        واتساب (01008119151)
-                    </a>
-                    <a href="tel:01008119151" class="w-12 h-12 rounded-xl bg-gray-800/80 border border-gray-700 text-white flex items-center justify-center text-xl hover:bg-indigo-600 hover:border-indigo-500 transition-all" title="اتصال">
-                        <i class="fa-solid fa-phone"></i>
-                    </a>
-                    <a href="https://github.com" target="_blank" class="w-12 h-12 rounded-xl bg-gray-800/80 border border-gray-700 text-white flex items-center justify-center text-xl hover:bg-indigo-600 hover:border-indigo-500 transition-all" title="GitHub">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </div>
+        <!-- Social Media & Contact Links Bar -->
+        <section class="glow-card rounded-2xl p-6 space-y-4">
+            <h3 class="text-lg font-bold text-white text-center" data-ar="تواصل معي مباشرة عبر المنصات" data-en="Connect With Me Directly">تواصل معي مباشرة عبر المنصات</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/201008119151" target="_blank" class="flex items-center justify-center gap-2 p-3 rounded-xl bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-600 hover:text-white transition text-xs md:text-sm font-bold">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                </a>
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/share/18FZKfKQeJ/" target="_blank" class="flex items-center justify-center gap-2 p-3 rounded-xl bg-blue-600/20 border border-blue-500/30 text-blue-400 hover:bg-blue-600 hover:text-white transition text-xs md:text-sm font-bold">
+                    <i class="fa-brands fa-facebook text-lg"></i> Facebook
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/ly3vx7?stkn=MTN2NzZ1bm1oNnJ3cA==" target="_blank" class="flex items-center justify-center gap-2 p-3 rounded-xl bg-pink-600/20 border border-pink-500/30 text-pink-400 hover:bg-pink-600 hover:text-white transition text-xs md:text-sm font-bold">
+                    <i class="fa-brands fa-instagram text-lg"></i> Instagram
+                </a>
+                <!-- Phone Call -->
+                <a href="tel:01008119151" class="flex items-center justify-center gap-2 p-3 rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400 hover:bg-indigo-600 hover:text-white transition text-xs md:text-sm font-bold">
+                    <i class="fa-solid fa-phone text-lg"></i> Call Me
+                </a>
             </div>
         </section>
 
     </main>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/201008119151" target="_blank" class="fixed bottom-6 left-6 z-50 w-14 h-14 bg-emerald-500 hover:bg-emerald-400 text-white rounded-full flex items-center justify-center text-2xl shadow-xl shadow-emerald-500/40 transition-all hover:scale-110" title="محادثة واتساب">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <footer class="border-t border-gray-800/80 bg-gray-950 py-6 relative z-10">
-        <div class="max-w-6xl mx-auto px-4 text-center text-gray-500 text-xs">
-            <p>جميع الحقوق محفوظة © <span id="currentYear"></span> - تم التصميم بـ <i class="fa-solid fa-heart text-red-500 mx-1"></i> بواسطة <span class="text-white font-bold">Dev Joo</span></p>
-        </div>
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-6 text-center text-xs text-slate-400">
+        <p>© 2026 Dev Joo. All Rights Reserved. Built with Precision & Security.</p>
     </footer>
 
+    <!-- Interactive Script for Languages -->
     <script>
-        // Set Current Year Automatically
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        let currentLang = 'ar';
 
-        // Toggle Interactive Banner
-        function toggleSpecialGreeting() {
-            const banner = document.getElementById('greetingBanner');
-            const greetings = [
-                "أهلاً بك! البرمجة هي القوة الخارقة في عصرنا الحاضر.",
-                "شكراً لزيارتك للموقع، لا تتردد في تصفح المهارات والخدمات!",
-                "تم تطوير هذا الموقع باستخدام أحدث تقنيات الويب المتجاوبة."
-            ];
-            const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
-            
-            document.getElementById('greetingText').textContent = randomGreeting;
-            banner.classList.toggle('hidden');
+        function toggleLanguage() {
+            const html = document.documentElement;
+            const bioAr = document.getElementById('bio-ar');
+            const bioEn = document.getElementById('bio-en');
+            const langLabel = document.getElementById('langLabel');
+            const slogan = document.getElementById('slogan');
+
+            if (currentLang === 'ar') {
+                currentLang = 'en';
+                html.setAttribute('dir', 'ltr');
+                html.setAttribute('lang', 'en');
+                bioAr.classList.add('hidden');
+                bioEn.classList.remove('hidden');
+                langLabel.innerText = 'العربية';
+                slogan.innerText = '"Code with purpose. Build with precision. Secure by design. 🚀"';
+
+                document.querySelectorAll('[data-en]').forEach(el => {
+                    el.innerText = el.getAttribute('data-en');
+                });
+            } else {
+                currentLang = 'ar';
+                html.setAttribute('dir', 'rtl');
+                html.setAttribute('lang', 'ar');
+                bioEn.classList.add('hidden');
+                bioAr.classList.remove('hidden');
+                langLabel.innerText = 'English';
+                slogan.innerText = '"كود له هدف، بناء بدقة، وأمان من البداية. 🚀"';
+
+                document.querySelectorAll('[data-ar]').forEach(el => {
+                    el.innerText = el.getAttribute('data-ar');
+                });
+            }
         }
-
-        // Animated Statistics Counter Logic
-        function animateCounter(elementId, targetNumber, duration) {
-            const element = document.getElementById(elementId);
-            let startNumber = 0;
-            const increment = targetNumber / (duration / 16);
-            
-            const timer = setInterval(() => {
-                startNumber += increment;
-                if (startNumber >= targetNumber) {
-                    element.textContent = targetNumber.toLocaleString('ar-EG') + (elementId === 'stat4' ? '%' : '+');
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(startNumber).toLocaleString('ar-EG');
-                }
-            }, 16);
-        }
-
-        // Trigger Counters on Load
-        window.addEventListener('DOMContentLoaded', () => {
-            animateCounter('stat1', 15, 1500);
-            animateCounter('stat2', 10000, 2000);
-            animateCounter('stat3', 450, 1800);
-            animateCounter('stat4', 100, 1200);
-        });
     </script>
 </body>
 </html>
