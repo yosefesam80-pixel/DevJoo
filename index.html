@@ -62,6 +62,7 @@
         .glow-card:hover {
             border-color: rgba(59, 130, 246, 0.4);
             box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+            transform: translateY(-3px);
         }
         .avatar-glow {
             box-shadow: 0 0 35px rgba(59, 130, 246, 0.35);
@@ -142,6 +143,7 @@
                 <a href="#mission" class="hover:text-blue-400 transition" data-ar="اختر هدفك" data-en="Choose Mission">اختر هدفك</a>
                 <a href="#solutions" class="hover:text-blue-400 transition" data-ar="حلول المشاكل" data-en="Solutions">حلول المشاكل</a>
                 <a href="#projects" class="hover:text-blue-400 transition" data-ar="المشاريع" data-en="Projects">المشاريع</a>
+                <a href="#techstack" class="hover:text-blue-400 transition" data-ar="التقنيات" data-en="Tech Stack">التقنيات</a>
                 <a href="#process" class="hover:text-blue-400 transition" data-ar="خطوات العمل" data-en="Process">خطوات العمل</a>
                 <a href="#about" class="hover:text-blue-400 transition" data-ar="عن الـ Studio" data-en="About Studio">عن الـ Studio</a>
                 <a href="#faq" class="hover:text-blue-400 transition" data-ar="الأسئلة" data-en="FAQ">الأسئلة</a>
@@ -509,6 +511,126 @@
             </div>
         </section>
 
+        <!-- 7 — TECHNOLOGIES I BUILD WITH (REDESIGNED TECH STACK SECTION) -->
+        <section id="techstack" class="space-y-8">
+            <div class="text-center space-y-2 max-w-2xl mx-auto">
+                <span class="text-xs font-bold text-blue-400 font-mono tracking-wider uppercase" data-ar="[ TECHNOLOGIES I BUILD WITH ]" data-en="[ TECHNOLOGIES I BUILD WITH ]">[ TECHNOLOGIES I BUILD WITH ]</span>
+                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="التقنيات التي أبني بها الحلول" data-en="Technologies I Build With">التقنيات التي أبني بها الحلول</h3>
+                <p class="text-slate-400 text-xs md:text-sm leading-relaxed" data-ar="أختار الأدوات المناسبة حسب طبيعة المشروع، الأداء، قابلية التوسع، ومتطلبات الأمان." data-en="Choosing the right tools based on project scope, performance, scalability, and security requirements.">
+                    أختار الأدوات المناسبة حسب طبيعة المشروع، الأداء، قابلية التوسع، ومتطلبات الأمان.
+                </p>
+            </div>
+
+            <!-- Tech Cards Grid: Desktop 4 / Tablet 2 / Mobile 1 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <!-- 1. Python -->
+                <div class="glow-card rounded-2xl p-5 flex flex-col justify-between border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl shrink-0">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Python</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 font-mono leading-normal pt-1">
+                        Automation • Backend • Data Processing
+                    </p>
+                </div>
+
+                <!-- 2. React & JavaScript -->
+                <div class="glow-card rounded-2xl p-5 flex flex-col justify-between border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl shrink-0">
+                            <i class="fa-brands fa-react"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">React & JS</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 font-mono leading-normal pt-1">
+                        Modern Interfaces • Interactive Web Apps
+                    </p>
+                </div>
+
+                <!-- 3. Node.js & REST APIs -->
+                <div class="glow-card rounded-2xl p-5 flex flex-col justify-between border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl shrink-0">
+                            <i class="fa-brands fa-node-js"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Node.js & APIs</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 font-mono leading-normal pt-1">
+                        Backend • APIs • Server Applications
+                    </p>
+                </div>
+
+                <!-- 4. C++ -->
+                <div class="glow-card rounded-2xl p-5 flex flex-col justify-between border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl shrink-0">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">C++</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 font-mono leading-normal pt-1">
+                        Systems • High-Performance Code
+                    </p>
+                </div>
+
+                <!-- 5. SQL & Databases -->
+                <div class="glow-card rounded-2xl p-5 flex flex-col justify-between border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400 text-xl shrink-0">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">SQL & Databases</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 font-mono leading-normal pt-1">
+                        Database Design • Data Management
+                    </p>
+                </div>
+
+                <!-- 6. Linux & Bash -->
+                <div class="glow-card rounded-2xl p-5 flex flex-col justify-between border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-slate-500/10 border border-slate-500/20 flex items-center justify-center text-slate-300 text-xl shrink-0">
+                            <i class="fa-brands fa-linux"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Linux & Bash</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 font-mono leading-normal pt-1">
+                        Servers • Automation • System Admin
+                    </p>
+                </div>
+
+                <!-- 7. TypeScript -->
+                <div class="glow-card rounded-2xl p-5 flex flex-col justify-between border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-600/10 border border-blue-600/20 flex items-center justify-center text-blue-300 text-xl shrink-0">
+                            <i class="fa-solid fa-file-code"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">TypeScript</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 font-mono leading-normal pt-1">
+                        Type-safe Apps • Scalable Code
+                    </p>
+                </div>
+
+                <!-- 8. Git & GitHub -->
+                <div class="glow-card rounded-2xl p-5 flex flex-col justify-between border border-white/5 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 text-xl shrink-0">
+                            <i class="fa-brands fa-git-alt"></i>
+                        </div>
+                        <h4 class="font-bold text-white text-base">Git & GitHub</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 font-mono leading-normal pt-1">
+                        Version Control • Workflows
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
         <!-- 8 — WHY WORK WITH ME -->
         <section class="space-y-6">
             <div class="text-center space-y-2">
@@ -563,35 +685,6 @@
                     <div class="w-8 h-8 rounded-full bg-emerald-600/20 text-emerald-400 font-bold mx-auto flex items-center justify-center text-sm">04</div>
                     <h4 class="font-bold text-white text-sm" data-ar="Deployment" data-en="Deployment">Deployment</h4>
                     <p class="text-[11px] text-slate-400" data-ar="الاختبار والنشر والتشغيل" data-en="Testing & Going live">الاختبار والنشر والتشغيل</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7 — TECH STACK -->
-        <section class="space-y-6">
-            <div class="text-center space-y-2">
-                <h3 class="text-2xl md:text-3xl font-black text-white" data-ar="التقنيات المستخدمة (Tech Stack)" data-en="Tech Stack & Tools">التقنيات المستخدمة (Tech Stack)</h3>
-                <p class="text-slate-400 text-sm" data-ar="أدوات ولغات مبني بها حلول المشروع" data-en="Technologies utilized to build high-grade solutions">أدوات ولغات مبني بها حلول المشروع</p>
-            </div>
-
-            <div class="flex flex-wrap justify-center gap-3">
-                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-blue-400 flex items-center gap-2">
-                    <i class="fa-brands fa-python text-base"></i> Python (Automation & Backend)
-                </div>
-                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-cyan-400 flex items-center gap-2">
-                    <i class="fa-brands fa-react text-base"></i> React & JavaScript
-                </div>
-                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-emerald-400 flex items-center gap-2">
-                    <i class="fa-brands fa-node-js text-base"></i> Node.js & REST APIs
-                </div>
-                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-purple-400 flex items-center gap-2">
-                    <i class="fa-solid fa-code text-base"></i> C++ Systems
-                </div>
-                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-yellow-400 flex items-center gap-2">
-                    <i class="fa-solid fa-database text-base"></i> SQL & Databases
-                </div>
-                <div class="px-4 py-2 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs font-bold text-slate-200 flex items-center gap-2">
-                    <i class="fa-brands fa-linux text-base"></i> Linux & Bash
                 </div>
             </div>
         </section>
@@ -679,7 +772,7 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 items-start">
-                <!-- Direct Direct Channels -->
+                <!-- Direct Communication Channels -->
                 <div class="space-y-4">
                     <h4 class="font-bold text-white text-base" data-ar="قنوات التواصل المباشر" data-en="Direct Communication Channels">قنوات التواصل المباشر</h4>
                     
