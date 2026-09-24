@@ -8,8 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts Cairo & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts Cairo & JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -23,13 +23,13 @@
                             700: '#1d4ed8',
                             cyber: '#10b981',
                             accent: '#8b5cf6',
-                            dark: '#0b0f17',
-                            card: '#131c2e'
+                            dark: '#070a11',
+                            card: '#0f172a'
                         }
                     },
                     fontFamily: {
                         cairo: ['Cairo', 'sans-serif'],
-                        inter: ['Inter', 'sans-serif']
+                        mono: ['JetBrains Mono', 'monospace']
                     }
                 }
             }
@@ -37,45 +37,74 @@
     </script>
     <style>
         body {
-            font-family: 'Cairo', 'Inter', sans-serif;
-            background-color: #0b0f17;
+            font-family: 'Cairo', sans-serif;
+            background-color: #070a11;
             color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .bg-grid {
+            background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 0);
+            background-size: 32px 32px;
         }
         .glow-card {
-            background: linear-gradient(135deg, rgba(19, 28, 46, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(11, 15, 23, 0.85) 100%);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .glow-card:hover {
             border-color: rgba(59, 130, 246, 0.4);
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.15);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
         }
         .avatar-glow {
-            box-shadow: 0 0 35px rgba(59, 130, 246, 0.35);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+        }
+        .cyber-border {
+            position: relative;
+        }
+        .cyber-border::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            background: linear-gradient(90deg, #3b82f6, #10b981, #8b5cf6);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+        .cyber-border:hover::before {
+            opacity: 1;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-brand-500 selection:text-white bg-grid relative">
 
-    <!-- Navbar Header -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-dark/80 border-b border-white/10">
+    <!-- Ambient Background Lighting Effect -->
+    <div class="fixed top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse"></div>
+    <div class="fixed bottom-0 left-1/4 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse" style="animation-duration: 4s;"></div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-brand-dark/70 border-b border-white/10">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 avatar-glow">
-                    <img src="my-photo.jpg" onerror="this.src='https://placehold.co/150x150/131c2e/3b82f6?text=Dev+Joo'" alt="Dev Joo Profile" class="w-full h-full object-cover rounded-full">
+                    <img src="me.jpeg" onerror="this.src='https://placehold.co/150x150/131c2e/3b82f6?text=Dev+Joo'" alt="Dev Joo Profile" class="w-full h-full object-cover rounded-full">
                 </div>
                 <div>
-                    <h1 class="text-xl font-extrabold tracking-wide text-white">Dev Joo</h1>
+                    <h1 class="text-xl font-black tracking-wide text-white flex items-center gap-2">
+                        Dev Joo
+                        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+                    </h1>
                     <p class="text-xs text-brand-cyber flex items-center gap-1 font-semibold">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span data-ar="م متاح للمشاريع والأمن السيبراني" data-en="Available for Projects & Security">متاح للمشاريع والأمن السيبراني</span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                        <span data-ar="متاح للمشاريع والأمن السيبراني" data-en="Available for Projects & Security">متاح للمشاريع والأمن السيبراني</span>
                     </p>
                 </div>
             </div>
 
             <div class="flex items-center gap-3">
-                <!-- Language Toggle Button -->
-                <button id="langToggle" onclick="toggleLanguage()" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-bold text-white transition flex items-center gap-2 border border-white/10">
+                <button id="langToggle" onclick="toggleLanguage()" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-bold text-white transition flex items-center gap-2 border border-white/10 shadow-lg">
                     <i class="fa-solid fa-globe text-brand-500"></i>
                     <span id="langLabel">English</span>
                 </button>
@@ -84,17 +113,14 @@
     </header>
 
     <!-- Main Hero Section -->
-    <main class="max-w-6xl mx-auto px-4 py-8 md:py-12 space-y-10 flex-grow">
+    <main class="max-w-6xl mx-auto px-4 py-8 md:py-12 space-y-10 flex-grow w-full">
         
-        <!-- Hero Bio Card -->
-        <section class="glow-card rounded-3xl p-6 md:p-10 relative overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-brand-cyber/10 rounded-full blur-3xl pointer-events-none"></div>
-
+        <!-- Hero Card -->
+        <section class="glow-card rounded-3xl p-6 md:p-10 relative overflow-hidden border border-white/10">
             <div class="grid md:grid-cols-3 gap-8 items-center">
-                <div class="md:col-span-2 space-y-4">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20">
-                        <i class="fa-solid fa-shield-halved"></i>
+                <div class="md:col-span-2 space-y-5">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold border border-blue-500/20 shadow-inner">
+                        <i class="fa-solid fa-shield-halved text-emerald-400"></i>
                         <span data-ar="هندسة البرمجيات & الأمن السيبراني" data-en="Software Engineering & Cybersecurity">هندسة البرمجيات & الأمن السيبراني</span>
                     </div>
 
@@ -103,41 +129,42 @@
                         <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-emerald-400">Dev Joo</span>
                     </h2>
 
-                    <!-- Arabic Bio Content -->
-                    <div id="bio-ar" class="space-y-3 text-slate-300 text-sm md:text-base leading-relaxed">
+                    <!-- Arabic Bio -->
+                    <div id="bio-ar" class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
                         <p class="font-bold text-lg text-white">مهندس برمجيات × متخصص في الأمن السيبراني 🔐</p>
-                        <p class="text-blue-200/90">ببني برمجيات وبأمّن أنظمة وبحل المشاكل التقنية.</p>
-                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs md:text-sm font-semibold pt-2">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-laptop-code text-blue-400"></i> 💻 هندسة البرمجيات</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-user-ninja text-emerald-400"></i> 🔐 الأمن السيبراني والاختبار الأخلاقي</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-indigo-400"></i> 🌐 تطوير الويب</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-gears text-purple-400"></i> ⚙️ الأنظمة والأتمتة</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-brain text-amber-400"></i> 🧠 حل المشكلات</li>
-                        </ul>
+                        <p class="text-slate-300">ببني برمجيات عالية الكفاءة، وبأمّن الأنظمة من الثغرات، وبحل المعضلات التقنية المعقدة.</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm font-semibold pt-2">
+                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-laptop-code text-blue-400 text-base"></i> 💻 هندسة البرمجيات</div>
+                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-user-ninja text-emerald-400 text-base"></i> 🔐 الأمن السيبراني والاختبار الأخلاقي</div>
+                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-globe text-indigo-400 text-base"></i> 🌐 تطوير الويب المتقدم</div>
+                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-gears text-purple-400 text-base"></i> ⚙️ الأنظمة والأتمتة</div>
+                        </div>
                     </div>
 
-                    <!-- English Bio Content (Hidden initially) -->
-                    <div id="bio-en" class="space-y-3 text-slate-300 text-sm md:text-base leading-relaxed hidden" dir="ltr">
+                    <!-- English Bio -->
+                    <div id="bio-en" class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed hidden" dir="ltr">
                         <p class="font-bold text-lg text-white">Software Engineer × Cybersecurity Specialist 🔐</p>
-                        <p class="text-blue-200/90">Building software. Securing systems. Solving problems.</p>
-                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs md:text-sm font-semibold pt-2">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-laptop-code text-blue-400"></i> 💻 Software Engineering</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-user-ninja text-emerald-400"></i> 🔐 Cybersecurity & Ethical Hacking</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-indigo-400"></i> 🌐 Web Development</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-gears text-purple-400"></i> ⚙️ Systems & Automation</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-brain text-amber-400"></i> 🧠 Problem Solving</li>
-                        </ul>
+                        <p class="text-slate-300">Building scalable software. Securing systems against vulnerabilities. Solving complex problems.</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm font-semibold pt-2">
+                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-laptop-code text-blue-400 text-base"></i> 💻 Software Engineering</div>
+                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-user-ninja text-emerald-400 text-base"></i> 🔐 Cybersecurity & Ethical Hacking</div>
+                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-globe text-indigo-400 text-base"></i> 🌐 Full Stack Development</div>
+                            <div class="flex items-center gap-2.5 p-2.5 rounded-xl bg-white/5 border border-white/5"><i class="fa-solid fa-gears text-purple-400 text-base"></i> ⚙️ Systems & Automation</div>
+                        </div>
                     </div>
 
-                    <div class="pt-2 italic text-xs md:text-sm text-emerald-400 font-semibold" id="slogan">
+                    <div class="pt-2 font-mono text-xs md:text-sm text-emerald-400 font-semibold" id="slogan">
                         "كود له هدف، بناء بدقة، وأمان من البداية. 🚀"
                     </div>
                 </div>
 
-                <!-- Profile Large Display for Desktop -->
-                <div class="flex flex-col items-center justify-center space-y-4">
-                    <div class="w-40 h-40 md:w-52 md:h-52 rounded-2xl p-1 bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 shadow-2xl">
-                        <img src="my-photo.jpg" onerror="this.src='https://placehold.co/300x300/131c2e/3b82f6?text=Dev+Joo'" alt="Dev Joo" class="w-full h-full object-cover rounded-xl">
+                <!-- Main Profile Picture -->
+                <div class="flex flex-col items-center justify-center">
+                    <div class="relative w-48 h-48 md:w-60 md:h-60 rounded-3xl p-1 bg-gradient-to-tr from-blue-600 via-indigo-500 to-emerald-400 shadow-2xl avatar-glow group">
+                        <img src="me.jpeg" onerror="this.src='https://placehold.co/300x300/131c2e/3b82f6?text=Dev+Joo'" alt="Dev Joo" class="w-full h-full object-cover rounded-[22px]">
+                        <div class="absolute inset-0 rounded-[22px] bg-blue-600/10 opacity-0 group-hover:opacity-100 transition duration-300"></div>
                     </div>
                 </div>
             </div>
@@ -146,38 +173,52 @@
         <!-- Tech Stack Section -->
         <section class="space-y-4">
             <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                <i class="fa-solid fa-code text-brand-500"></i>
+                <i class="fa-solid fa-microchip text-brand-500"></i>
                 <span data-ar="التقنيات وأدوات العمل (Tech Stack)" data-en="Tech Stack & Tools">التقنيات وأدوات العمل (Tech Stack)</span>
             </h3>
-            <div class="flex flex-wrap gap-2 md:gap-3">
-                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-blue-400 hover:scale-105 transition">Python</span>
-                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-purple-400 hover:scale-105 transition">C++</span>
-                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-yellow-400 hover:scale-105 transition">JavaScript</span>
-                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-blue-300 hover:scale-105 transition">TypeScript</span>
-                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-emerald-400 hover:scale-105 transition">SQL</span>
-                <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-xs md:text-sm font-bold text-slate-200 hover:scale-105 transition">Bash</span>
+            <div class="flex flex-wrap gap-3">
+                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-blue-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
+                    <i class="fa-brands fa-python text-lg"></i> Python
+                </div>
+                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-purple-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
+                    <i class="fa-solid fa-code text-lg"></i> C++
+                </div>
+                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-yellow-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
+                    <i class="fa-brands fa-js text-lg"></i> JavaScript
+                </div>
+                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-blue-300 flex items-center gap-2 hover:scale-105 transition shadow-lg">
+                    <i class="fa-solid fa-file-code text-lg"></i> TypeScript
+                </div>
+                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-emerald-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
+                    <i class="fa-solid fa-database text-lg"></i> SQL
+                </div>
+                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-slate-200 flex items-center gap-2 hover:scale-105 transition shadow-lg">
+                    <i class="fa-solid fa-terminal text-lg"></i> Bash
+                </div>
+                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-red-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
+                    <i class="fa-brands fa-git-alt text-lg"></i> Git
+                </div>
+                <div class="px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/60 text-xs md:text-sm font-bold text-cyan-400 flex items-center gap-2 hover:scale-105 transition shadow-lg">
+                    <i class="fa-brands fa-linux text-lg"></i> Linux
+                </div>
             </div>
         </section>
 
-        <!-- Social Media & Contact Links Bar -->
-        <section class="glow-card rounded-2xl p-6 space-y-4">
+        <!-- Social Media & Contact Links -->
+        <section class="glow-card rounded-2xl p-6 space-y-4 border border-white/10">
             <h3 class="text-lg font-bold text-white text-center" data-ar="تواصل معي مباشرة عبر المنصات" data-en="Connect With Me Directly">تواصل معي مباشرة عبر المنصات</h3>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <!-- WhatsApp -->
-                <a href="https://wa.me/201008119151" target="_blank" class="flex items-center justify-center gap-2 p-3 rounded-xl bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-600 hover:text-white transition text-xs md:text-sm font-bold">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                <a href="https://wa.me/201008119151" target="_blank" class="cyber-border flex items-center justify-center gap-2 p-3.5 rounded-xl bg-emerald-600/10 text-emerald-400 hover:text-white transition text-xs md:text-sm font-bold">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp
                 </a>
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/share/18FZKfKQeJ/" target="_blank" class="flex items-center justify-center gap-2 p-3 rounded-xl bg-blue-600/20 border border-blue-500/30 text-blue-400 hover:bg-blue-600 hover:text-white transition text-xs md:text-sm font-bold">
-                    <i class="fa-brands fa-facebook text-lg"></i> Facebook
+                <a href="https://www.facebook.com/share/18FZKfKQeJ/" target="_blank" class="cyber-border flex items-center justify-center gap-2 p-3.5 rounded-xl bg-blue-600/10 text-blue-400 hover:text-white transition text-xs md:text-sm font-bold">
+                    <i class="fa-brands fa-facebook text-xl"></i> Facebook
                 </a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/ly3vx7?stkn=MTN2NzZ1bm1oNnJ3cA==" target="_blank" class="flex items-center justify-center gap-2 p-3 rounded-xl bg-pink-600/20 border border-pink-500/30 text-pink-400 hover:bg-pink-600 hover:text-white transition text-xs md:text-sm font-bold">
-                    <i class="fa-brands fa-instagram text-lg"></i> Instagram
+                <a href="https://www.instagram.com/ly3vx7?stkn=MTN2NzZ1bm1oNnJ3cA==" target="_blank" class="cyber-border flex items-center justify-center gap-2 p-3.5 rounded-xl bg-pink-600/10 text-pink-400 hover:text-white transition text-xs md:text-sm font-bold">
+                    <i class="fa-brands fa-instagram text-xl"></i> Instagram
                 </a>
-                <!-- Phone Call -->
-                <a href="tel:01008119151" class="flex items-center justify-center gap-2 p-3 rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-400 hover:bg-indigo-600 hover:text-white transition text-xs md:text-sm font-bold">
-                    <i class="fa-solid fa-phone text-lg"></i> Call Me
+                <a href="tel:01008119151" class="cyber-border flex items-center justify-center gap-2 p-3.5 rounded-xl bg-indigo-600/10 text-indigo-400 hover:text-white transition text-xs md:text-sm font-bold">
+                    <i class="fa-solid fa-phone text-xl"></i> Call Me
                 </a>
             </div>
         </section>
@@ -185,11 +226,11 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-white/10 py-6 text-center text-xs text-slate-400">
+    <footer class="border-t border-white/10 py-6 text-center text-xs text-slate-400 backdrop-blur-md">
         <p>© 2026 Dev Joo. All Rights Reserved. Built with Precision & Security.</p>
     </footer>
 
-    <!-- Interactive Script for Languages -->
+    <!-- Interactive Language Switcher Script -->
     <script>
         let currentLang = 'ar';
 
